@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow Admin - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#B7FF00', // Neon Green
+                            dark: '#8AB800',
+                            light: '#D4FF5C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f0f11;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            rounded: 3px;
+        }
+    </style>
+</head>
+
+<body class="bg-[#0f0f11] text-neutral-300 antialiased flex h-screen overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-black border-r border-white/5 flex flex-col hidden lg:flex relative z-20">
+        <div class="p-8">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center border border-white/10 shadow-lg shadow-brand/10">
+                    <iconify-icon icon="solar:bolt-circle-bold" width="24" class="text-brand"></iconify-icon>
+                </div>
+                <span class="text-xl font-display font-medium text-white tracking-tight">FitFlow</span>
+            </div>
+        </div>
+
+        <nav class="flex-1 px-4 space-y-2 overflow-y-auto">
+            <p class="px-4 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2 mt-4">Overview</p>
+            <a href="dashboard.html"
+                class="flex items-center gap-3 px-4 py-3 bg-white/5 text-white rounded-xl border border-white/5 transition-colors">
+                <iconify-icon icon="solar:widget-linear" width="20"></iconify-icon>
+                <span class="font-medium">Dashboard</span>
+            </a>
+
+            <p class="px-4 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2 mt-6">Management</p>
+            <a href="users.html"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:users-group-rounded-linear" width="20"></iconify-icon>
+                <span class="font-medium">Users</span>
+            </a>
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:calendar-date-linear" width="20"></iconify-icon>
+                <span class="font-medium">Schedule</span>
+            </a>
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:dumbbell-large-linear" width="20"></iconify-icon>
+                <span class="font-medium">Facility</span>
+            </a>
+
+            <p class="px-4 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2 mt-6">Reports</p>
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:chart-square-linear" width="20"></iconify-icon>
+                <span class="font-medium">Financials</span>
+            </a>
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:settings-linear" width="20"></iconify-icon>
+                <span class="font-medium">Settings</span>
+            </a>
+        </nav>
+
+        <div class="p-6 border-t border-white/5">
+            <div class="flex items-center gap-3">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg"
+                    class="w-10 h-10 rounded-full border border-white/10">
+                <div>
+                    <p class="text-sm font-medium text-white">Admin User</p>
+                    <p class="text-xs text-neutral-500">Super Admin</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col overflow-hidden relative">
+        <!-- Top Bar -->
+        <header
+            class="h-20 bg-[#0f0f11]/80 backdrop-blur-md border-b border-white/5 flex items-center justify-between px-8 sticky top-0 z-10">
+            <div class="flex items-center gap-4 lg:hidden">
+                <button class="text-white"><iconify-icon icon="solar:hamburger-menu-linear"
+                        width="24"></iconify-icon></button>
+                <span class="text-xl font-display font-medium text-white">FitFlow</span>
+            </div>
+            <div class="hidden lg:block">
+                <h2 class="text-xl font-display font-medium text-white">Dashboard Overview</h2>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="relative hidden md:block">
+                    <iconify-icon icon="solar:magnifer-linear"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500"></iconify-icon>
+                    <input type="text" placeholder="Search..."
+                        class="bg-neutral-900 border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm text-white focus:border-brand focus:outline-none w-64">
+                </div>
+                <button
+                    class="w-10 h-10 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white transition-colors relative">
+                    <iconify-icon icon="solar:bell-linear" width="20"></iconify-icon>
+                    <div class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"></div>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="flex-1 overflow-y-auto p-8 space-y-8">
+
+            <!-- KPI Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div
+                    class="bg-neutral-900 border border-white/5 p-6 rounded-[2rem] hover:border-white/10 transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <div
+                            class="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500">
+                            <iconify-icon icon="solar:users-group-rounded-bold" width="24"></iconify-icon>
+                        </div>
+                        <span
+                            class="text-green-500 text-xs font-bold bg-green-500/10 px-2 py-1 rounded-full">+12%</span>
+                    </div>
+                    <p class="text-neutral-500 text-sm font-medium">Active Members</p>
+                    <h3 class="text-3xl font-display font-medium text-white mt-1">1,240</h3>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-neutral-900 border border-white/5 p-6 rounded-[2rem] hover:border-white/10 transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-brand/10 rounded-2xl flex items-center justify-center text-brand">
+                            <iconify-icon icon="solar:wallet-money-bold" width="24"></iconify-icon>
+                        </div>
+                        <span
+                            class="text-green-500 text-xs font-bold bg-green-500/10 px-2 py-1 rounded-full">+8.4%</span>
+                    </div>
+                    <p class="text-neutral-500 text-sm font-medium">Monthly Revenue</p>
+                    <h3 class="text-3xl font-display font-medium text-white mt-1">$45.2k</h3>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-neutral-900 border border-white/5 p-6 rounded-[2rem] hover:border-white/10 transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <div
+                            class="w-12 h-12 bg-orange-500/10 rounded-2xl flex items-center justify-center text-orange-500">
+                            <iconify-icon icon="solar:dumbbell-large-bold" width="24"></iconify-icon>
+                        </div>
+                        <span class="text-neutral-500 text-xs font-bold bg-white/5 px-2 py-1 rounded-full">0%</span>
+                    </div>
+                    <p class="text-neutral-500 text-sm font-medium">Occupancy Rate</p>
+                    <h3 class="text-3xl font-display font-medium text-white mt-1">78%</h3>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="bg-neutral-900 border border-white/5 p-6 rounded-[2rem] hover:border-white/10 transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <div
+                            class="w-12 h-12 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-500">
+                            <iconify-icon icon="solar:user-plus-bold" width="24"></iconify-icon>
+                        </div>
+                        <span class="text-green-500 text-xs font-bold bg-green-500/10 px-2 py-1 rounded-full">+24</span>
+                    </div>
+                    <p class="text-neutral-500 text-sm font-medium">New Signups</p>
+                    <h3 class="text-3xl font-display font-medium text-white mt-1">142</h3>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                <!-- Chart Section -->
+                <div class="lg:col-span-2 bg-neutral-900 border border-white/5 rounded-[2rem] p-8">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="text-xl font-display font-medium text-white">Revenue Overview</h3>
+                        <select
+                            class="bg-black/50 border border-white/10 text-white text-sm rounded-lg px-3 py-2 outline-none">
+                            <option>This Year</option>
+                            <option>Last Year</option>
+                        </select>
+                    </div>
+
+                    <!-- Fake Bar Chart -->
+                    <div class="h-64 flex items-end gap-4">
+                        <div class="flex-1 bg-white/5 rounded-t-lg h-[40%] hover:bg-brand/50 transition-colors mx-1">
+                        </div>
+                        <div class="flex-1 bg-white/5 rounded-t-lg h-[60%] hover:bg-brand/50 transition-colors mx-1">
+                        </div>
+                        <div class="flex-1 bg-white/5 rounded-t-lg h-[50%] hover:bg-brand/50 transition-colors mx-1">
+                        </div>
+                        <div class="flex-1 bg-white/5 rounded-t-lg h-[70%] hover:bg-brand/50 transition-colors mx-1">
+                        </div>
+                        <div class="flex-1 bg-white/5 rounded-t-lg h-[55%] hover:bg-brand/50 transition-colors mx-1">
+                        </div>
+                        <div class="flex-1 bg-white/5 rounded-t-lg h-[80%] hover:bg-brand/50 transition-colors mx-1">
+                        </div>
+                        <div class="flex-1 bg-white/5 rounded-t-lg h-[65%] hover:bg-brand/50 transition-colors mx-1">
+                        </div>
+                        <div class="flex-1 bg-brand rounded-t-lg h-[90%] shadow-[0_0_20px_rgba(183,255,0,0.3)] mx-1">
+                        </div>
+                        <div class="flex-1 bg-white/5 rounded-t-lg h-[75%] hover:bg-brand/50 transition-colors mx-1">
+                        </div>
+                        <div class="flex-1 bg-white/5 rounded-t-lg h-[60%] hover:bg-brand/50 transition-colors mx-1">
+                        </div>
+                        <div class="flex-1 bg-white/5 rounded-t-lg h-[40%] hover:bg-brand/50 transition-colors mx-1">
+                        </div>
+                        <div class="flex-1 bg-white/5 rounded-t-lg h-[45%] hover:bg-brand/50 transition-colors mx-1">
+                        </div>
+                    </div>
+                    <div class="flex justify-between mt-4 text-xs text-neutral-500 font-medium uppercase tracking-wide">
+                        <span>Jan</span><span>Apr</span><span>Jul</span><span>Oct</span><span>Dec</span>
+                    </div>
+                </div>
+
+                <!-- Feed -->
+                <div class="bg-neutral-900 border border-white/5 rounded-[2rem] p-8">
+                    <h3 class="text-xl font-display font-medium text-white mb-6">Live Feed</h3>
+                    <div class="space-y-6">
+
+                        <div class="flex gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-white border border-white/5 flex-shrink-0">
+                                <iconify-icon icon="solar:login-2-linear" width="20"></iconify-icon>
+                            </div>
+                            <div>
+                                <p class="text-sm text-neutral-300"><span class="text-white font-medium">John Doe</span>
+                                    checked in.</p>
+                                <p class="text-xs text-neutral-500 mt-1">2 mins ago • Main Entrance</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-white border border-white/5 flex-shrink-0">
+                                <iconify-icon icon="solar:cart-large-linear" width="20"></iconify-icon>
+                            </div>
+                            <div>
+                                <p class="text-sm text-neutral-300">New membership purchase.</p>
+                                <p class="text-xs text-neutral-500 mt-1">15 mins ago • Gold Tier</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-white border border-white/5 flex-shrink-0">
+                                <iconify-icon icon="solar:bell-linear" width="20"></iconify-icon>
+                            </div>
+                            <div>
+                                <p class="text-sm text-neutral-300"><span class="text-white font-medium">Morning
+                                        Yoga</span> is full.</p>
+                                <p class="text-xs text-neutral-500 mt-1">30 mins ago • System Alert</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button
+                        class="w-full mt-6 py-3 rounded-xl bg-white/5 text-sm font-medium text-white hover:bg-white/10 transition-colors">View
+                        All Activity</button>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

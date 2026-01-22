@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow - Trainer Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#B7FF00', // Neon Green
+                            dark: '#8AB800',
+                            light: '#D4FF5C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .mobile-container {
+            max-width: 402px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #0f0f11;
+            position: relative;
+            overflow-x: hidden;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 90px;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-neutral-300 antialiased">
+    <div class="mobile-container flex flex-col h-screen">
+
+        <!-- Hero / Profile Header -->
+        <div class="relative pt-12 px-6 pb-6 bg-gradient-to-b from-neutral-900 to-black">
+            <!-- Back -->
+            <button onclick="history.back()"
+                class="absolute top-4 left-4 w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-neutral-800 transition-colors">
+                <iconify-icon icon="solar:arrow-left-linear" width="24" class="text-white"></iconify-icon>
+            </button>
+            <button
+                class="absolute top-4 right-4 w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-neutral-800 transition-colors">
+                <iconify-icon icon="solar:heart-linear" width="24" class="text-white"></iconify-icon>
+            </button>
+
+            <div class="flex flex-col items-center">
+                <div class="w-28 h-28 rounded-3xl p-1 bg-gradient-to-tr from-brand to-transparent mb-4">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                        class="w-full h-full rounded-[1.25rem] object-cover bg-neutral-800">
+                </div>
+                <h1 class="text-2xl font-display font-medium text-white flex items-center gap-2">
+                    Sarah Jenkins
+                    <iconify-icon icon="solar:verified-check-bold" class="text-blue-500" width="20"></iconify-icon>
+                </h1>
+                <p class="text-neutral-500 text-sm">Yoga & Mobility Specialist</p>
+
+                <!-- Stats Row -->
+                <div class="flex gap-8 mt-6">
+                    <div class="text-center">
+                        <div class="text-lg font-bold text-white">4.9</div>
+                        <div class="text-xs text-neutral-500">Rating</div>
+                    </div>
+                    <div class="w-px bg-white/10 h-8 self-center"></div>
+                    <div class="text-center">
+                        <div class="text-lg font-bold text-white">120+</div>
+                        <div class="text-xs text-neutral-500">Clients</div>
+                    </div>
+                    <div class="w-px bg-white/10 h-8 self-center"></div>
+                    <div class="text-center">
+                        <div class="text-lg font-bold text-white">3y</div>
+                        <div class="text-xs text-neutral-500">Exp</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-1 overflow-y-auto px-6 py-4 space-y-8">
+
+            <!-- Bio -->
+            <div class="space-y-2">
+                <h3 class="text-lg font-display font-medium text-white">About</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">
+                    Certified E-RYT 500 Yoga Instructor with a passion for helping clients find balance and strength. I
+                    specialize in injury recovery and increasing flexibility for athletes.
+                </p>
+            </div>
+
+            <!-- Availability -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-display font-medium text-white">Availability</h3>
+                <!-- Date Strip -->
+                <div class="flex overflow-x-auto gap-3 pb-2 no-scrollbar">
+                    <button
+                        class="flex-shrink-0 flex flex-col items-center justify-center w-14 h-16 bg-brand rounded-xl text-black">
+                        <span class="text-xs font-semibold">Today</span>
+                        <span class="text-lg font-bold">21</span>
+                    </button>
+                    <button
+                        class="flex-shrink-0 flex flex-col items-center justify-center w-14 h-16 bg-neutral-900 rounded-xl text-neutral-400 border border-white/5">
+                        <span class="text-xs font-medium">Tue</span>
+                        <span class="text-lg font-medium text-white">22</span>
+                    </button>
+                    <button
+                        class="flex-shrink-0 flex flex-col items-center justify-center w-14 h-16 bg-neutral-900 rounded-xl text-neutral-400 border border-white/5">
+                        <span class="text-xs font-medium">Wed</span>
+                        <span class="text-lg font-medium text-white">23</span>
+                    </button>
+                </div>
+                <!-- Time Slots Grid -->
+                <div class="grid grid-cols-3 gap-3">
+                    <button
+                        class="py-3 rounded-xl bg-neutral-900 border border-white/10 text-white text-sm font-medium hover:border-brand transition-colors">09:00
+                        AM</button>
+                    <button
+                        class="py-3 rounded-xl bg-neutral-900 border border-white/10 text-white text-sm font-medium hover:border-brand transition-colors">11:00
+                        AM</button>
+                    <button
+                        class="py-3 rounded-xl bg-neutral-800 border border-transparent text-neutral-500 text-sm font-medium cursor-not-allowed opacity-50">02:00
+                        PM</button>
+                    <button
+                        class="py-3 rounded-xl bg-brand text-black border border-transparent text-sm font-bold shadow-lg shadow-brand/20">04:00
+                        PM</button>
+                </div>
+            </div>
+
+            <!-- Reviews Preview -->
+            <div class="space-y-4">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-display font-medium text-white">Recent Reviews</h3>
+                    <a href="#" class="text-brand text-xs font-medium hover:underline">View All</a>
+                </div>
+                <div class="bg-neutral-900/50 rounded-2xl p-4 border border-white/5">
+                    <div class="flex justify-between mb-2">
+                        <span class="text-white text-sm font-medium">Michael B.</span>
+                        <div class="flex text-yellow-400 text-xs gap-0.5"><iconify-icon
+                                icon="solar:star-bold"></iconify-icon><iconify-icon
+                                icon="solar:star-bold"></iconify-icon><iconify-icon
+                                icon="solar:star-bold"></iconify-icon><iconify-icon
+                                icon="solar:star-bold"></iconify-icon><iconify-icon
+                                icon="solar:star-bold"></iconify-icon></div>
+                    </div>
+                    <p class="text-neutral-400 text-xs italic">"Sarah is amazing! My back pain has significantly decreased
+                        since starting sessions with her."</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Sticky Footer -->
+        <div
+            class="fixed bottom-0 left-0 right-0 p-4 border-t border-white/10 bg-black/90 backdrop-blur-md flex justify-center z-50">
+            <div class="w-full max-w-[402px] flex items-center gap-4">
+                <div class="flex-1">
+                    <p class="text-white font-bold text-lg">$50<span class="text-neutral-500 text-sm font-normal"> /
+                            session</span></p>
+                </div>
+                <button
+                    class="bg-brand text-black font-bold px-8 py-3 rounded-full hover:bg-brand/90 transition-colors shadow-lg shadow-brand/20">
+                    Book Session
+                </button>
+                <button
+                    class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 text-white">
+                    <iconify-icon icon="solar:chat-round-line-linear" width="24"></iconify-icon>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

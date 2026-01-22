@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow - Membership</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#B7FF00', // Neon Green
+                            dark: '#8AB800',
+                            light: '#D4FF5C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .mobile-container {
+            max-width: 402px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #0f0f11;
+            position: relative;
+            overflow-x: hidden;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 80px;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-neutral-300 antialiased">
+    <div class="mobile-container flex flex-col h-screen">
+
+        <!-- Header -->
+        <div class="px-6 pt-6 pb-4 sticky top-0 z-20 bg-black/90 backdrop-blur-md border-b border-white/5">
+            <div class="flex items-center gap-4">
+                <button onclick="history.back()"
+                    class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-neutral-800 transition-colors">
+                    <iconify-icon icon="solar:arrow-left-linear" width="24" class="text-white"></iconify-icon>
+                </button>
+                <h1 class="text-2xl font-display font-medium text-white">Membership</h1>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="flex-1 overflow-y-auto px-6 py-6 space-y-8">
+
+            <!-- Current Plan Card -->
+            <div
+                class="bg-gradient-to-br from-neutral-800 to-black border border-white/10 rounded-3xl p-6 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-brand/10 rounded-full -mr-10 -mt-10 blur-3xl"></div>
+
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-xs font-bold text-brand uppercase tracking-wider mb-1 block">Current
+                            Plan</span>
+                        <h2 class="text-3xl font-display font-medium text-white">Gold Tier</h2>
+                    </div>
+                    <div
+                        class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/5">
+                        <iconify-icon icon="solar:crown-star-bold" width="24" class="text-yellow-400"></iconify-icon>
+                    </div>
+                </div>
+
+                <div class="space-y-2 mb-6">
+                    <div class="flex items-center gap-2 text-sm text-neutral-400">
+                        <iconify-icon icon="solar:check-circle-bold" class="text-brand"></iconify-icon>
+                        Unlimited Gym Access
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-neutral-400">
+                        <iconify-icon icon="solar:check-circle-bold" class="text-brand"></iconify-icon>
+                        4 Group Classes / mo
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-neutral-400">
+                        <iconify-icon icon="solar:check-circle-bold" class="text-brand"></iconify-icon>
+                        Sauna Access
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-end border-t border-white/10 pt-4">
+                    <div>
+                        <p class="text-xs text-neutral-500">Renews on</p>
+                        <p class="text-white font-medium">Nov 24, 2024</p>
+                    </div>
+                    <span class="text-white font-medium text-xl">$49.99<span
+                            class="text-sm font-normal text-neutral-500">/mo</span></span>
+                </div>
+            </div>
+
+            <button
+                class="w-full py-4 rounded-full bg-white text-black font-bold text-sm hover:bg-neutral-200 transition-colors">
+                Upgrade Plan
+            </button>
+
+            <!-- Payment Method -->
+            <div>
+                <h3 class="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-4">Payment Method</h3>
+                <div class="bg-neutral-900 border border-white/5 rounded-3xl p-4 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-8 bg-white rounded flex items-center justify-center">
+                            <iconify-icon icon="logos:mastercard" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <p class="text-white font-medium text-sm">•••• 4242</p>
+                            <p class="text-xs text-neutral-500">Expires 12/25</p>
+                        </div>
+                    </div>
+                    <button class="text-brand text-xs font-medium hover:underline">Edit</button>
+                </div>
+            </div>
+
+            <!-- History -->
+            <div>
+                <h3 class="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-4">Billing History</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center py-3 border-b border-white/5">
+                        <div>
+                            <p class="text-white text-sm font-medium">Monthly Subscription</p>
+                            <p class="text-xs text-neutral-500">Oct 24, 2024</p>
+                        </div>
+                        <span class="text-white text-sm">$49.99</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 border-b border-white/5">
+                        <div>
+                            <p class="text-white text-sm font-medium">Monthly Subscription</p>
+                            <p class="text-xs text-neutral-500">Sep 24, 2024</p>
+                        </div>
+                        <span class="text-white text-sm">$49.99</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

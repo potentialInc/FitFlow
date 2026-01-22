@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow Admin - Schedule</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#B7FF00', // Neon Green
+                            dark: '#8AB800',
+                            light: '#D4FF5C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f0f11;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            rounded: 3px;
+        }
+    </style>
+</head>
+
+<body class="bg-[#0f0f11] text-neutral-300 antialiased flex h-screen overflow-hidden">
+
+    <!-- Sidebar (Reused) -->
+    <aside class="w-64 bg-black border-r border-white/5 flex flex-col hidden lg:flex relative z-20">
+        <div class="p-8">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center border border-white/10 shadow-lg shadow-brand/10">
+                    <iconify-icon icon="solar:bolt-circle-bold" width="24" class="text-brand"></iconify-icon>
+                </div>
+                <span class="text-xl font-display font-medium text-white tracking-tight">FitFlow</span>
+            </div>
+        </div>
+
+        <nav class="flex-1 px-4 space-y-2 overflow-y-auto">
+            <p class="px-4 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2 mt-4">Overview</p>
+            <a href="dashboard.html"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:widget-linear" width="20"></iconify-icon>
+                <span class="font-medium">Dashboard</span>
+            </a>
+
+            <p class="px-4 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2 mt-6">Management</p>
+            <a href="users.html"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:users-group-rounded-linear" width="20"></iconify-icon>
+                <span class="font-medium">Users</span>
+            </a>
+            <a href="schedule.html"
+                class="flex items-center gap-3 px-4 py-3 bg-white/5 text-white rounded-xl border border-white/5 transition-colors">
+                <iconify-icon icon="solar:calendar-date-linear" width="20"></iconify-icon>
+                <span class="font-medium">Schedule</span>
+            </a>
+            <a href="facility.html"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:dumbbell-large-linear" width="20"></iconify-icon>
+                <span class="font-medium">Facility</span>
+            </a>
+
+            <p class="px-4 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2 mt-6">Reports</p>
+            <a href="financials.html"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:chart-square-linear" width="20"></iconify-icon>
+                <span class="font-medium">Financials</span>
+            </a>
+        </nav>
+
+        <div class="p-6 border-t border-white/5">
+            <div class="flex items-center gap-3">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg"
+                    class="w-10 h-10 rounded-full border border-white/10">
+                <div>
+                    <p class="text-sm font-medium text-white">Admin User</p>
+                    <p class="text-xs text-neutral-500">Super Admin</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col overflow-hidden relative">
+        <!-- Top Bar -->
+        <header
+            class="h-20 bg-[#0f0f11]/80 backdrop-blur-md border-b border-white/5 flex items-center justify-between px-8 sticky top-0 z-10">
+            <div class="flex items-center gap-4 lg:hidden">
+                <button class="text-white"><iconify-icon icon="solar:hamburger-menu-linear"
+                        width="24"></iconify-icon></button>
+                <span class="text-xl font-display font-medium text-white">FitFlow</span>
+            </div>
+            <div class="hidden lg:block">
+                <h2 class="text-xl font-display font-medium text-white">Class Schedule</h2>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button
+                    class="bg-brand text-black font-bold text-sm px-4 py-2 rounded-full flex items-center gap-2 hover:bg-brand/90 transition-colors">
+                    <iconify-icon icon="solar:add-circle-bold" width="18"></iconify-icon>
+                    Add Class
+                </button>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <div class="flex-1 overflow-y-auto p-8">
+
+            <div class="bg-neutral-900 border border-white/5 rounded-[2rem] overflow-hidden h-full flex flex-col">
+
+                <!-- Calendar Toolbar -->
+                <div class="p-6 border-b border-white/5 flex justify-between items-center">
+                    <div class="flex items-center gap-4">
+                        <button
+                            class="w-8 h-8 rounded-lg border border-white/10 flex items-center justify-center hover:bg-white/5"><iconify-icon
+                                icon="solar:alt-arrow-left-linear"></iconify-icon></button>
+                        <span class="text-lg font-medium text-white">October 2024</span>
+                        <button
+                            class="w-8 h-8 rounded-lg border border-white/10 flex items-center justify-center hover:bg-white/5"><iconify-icon
+                                icon="solar:alt-arrow-right-linear"></iconify-icon></button>
+                    </div>
+
+                    <div class="flex bg-black/50 p-1 rounded-xl border border-white/10">
+                        <button
+                            class="px-4 py-2 rounded-lg bg-neutral-800 text-white text-sm font-medium border border-white/5 shadow-lg">Week</button>
+                        <button
+                            class="px-4 py-2 rounded-lg text-neutral-500 text-sm font-medium hover:text-white transition-colors">Month</button>
+                    </div>
+                </div>
+
+                <!-- Calendar View (Week Grid Simulation) -->
+                <div class="flex-1 overflow-auto bg-black/20">
+                    <div class="grid grid-cols-8 h-full min-w-[1000px]">
+                        <!-- Time Column -->
+                        <div class="border-r border-white/5">
+                            <div class="h-12 border-b border-white/5"></div> <!-- Header Spacer -->
+                            <div class="h-24 border-b border-white/5 p-2 text-xs text-neutral-500 text-right">08:00</div>
+                            <div class="h-24 border-b border-white/5 p-2 text-xs text-neutral-500 text-right">09:00</div>
+                            <div class="h-24 border-b border-white/5 p-2 text-xs text-neutral-500 text-right">10:00</div>
+                            <div class="h-24 border-b border-white/5 p-2 text-xs text-neutral-500 text-right">11:00</div>
+                            <div class="h-24 border-b border-white/5 p-2 text-xs text-neutral-500 text-right">12:00</div>
+                        </div>
+
+                        <!-- Days Columns -->
+                        <!-- Monday -->
+                        <div class="border-r border-white/5 relative">
+                            <div class="h-12 border-b border-white/5 p-3 text-center text-sm font-medium text-white">Mon
+                                21</div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div
+                                class="absolute top-[48px] left-1 right-1 h-[90px] bg-brand/20 border-l-4 border-brand rounded p-2 overflow-hidden hover:bg-brand/30 cursor-pointer transition-colors">
+                                <p class="text-xs font-bold text-white truncate">Morning Yoga</p>
+                                <p class="text-[10px] text-neutral-300">08:00 - 09:30</p>
+                                <p class="text-[10px] text-neutral-400">Studio A</p>
+                            </div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div class="h-24 border-b border-white/5"></div>
+                        </div>
+
+                        <!-- Tuesday -->
+                        <div class="border-r border-white/5 relative">
+                            <div class="h-12 border-b border-white/5 p-3 text-center text-sm font-medium text-white">Tue
+                                22</div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div
+                                class="absolute top-[240px] left-1 right-1 h-[60px] bg-blue-500/20 border-l-4 border-blue-500 rounded p-2 overflow-hidden hover:bg-blue-500/30 cursor-pointer transition-colors">
+                                <p class="text-xs font-bold text-white truncate">HIIT Blast</p>
+                                <p class="text-[10px] text-neutral-300">10:00 - 11:00</p>
+                                <p class="text-[10px] text-neutral-400">Main Floor</p>
+                            </div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div class="h-24 border-b border-white/5"></div>
+                        </div>
+
+                        <!-- Wed -->
+                        <div class="border-r border-white/5 flex flex-col items-stretch">
+                            <div class="h-12 border-b border-white/5 p-3 text-center text-sm font-medium text-white">Wed
+                                23</div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div class="h-24 border-b border-white/5"></div>
+                        </div>
+                        <!-- Thu -->
+                        <div class="border-r border-white/5 flex flex-col items-stretch">
+                            <div class="h-12 border-b border-white/5 p-3 text-center text-sm font-medium text-white">Thu
+                                24</div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div class="h-24 border-b border-white/5"></div>
+                        </div>
+                        <!-- Fri -->
+                        <div class="border-r border-white/5 flex flex-col items-stretch">
+                            <div class="h-12 border-b border-white/5 p-3 text-center text-sm font-medium text-white">Fri
+                                25</div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div class="h-24 border-b border-white/5"></div>
+                        </div>
+                        <!-- Sat -->
+                        <div class="border-r border-white/5 flex flex-col items-stretch bg-white/[0.02]">
+                            <div
+                                class="h-12 border-b border-white/5 p-3 text-center text-sm font-medium text-neutral-400">
+                                Sat 26</div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div class="h-24 border-b border-white/5"></div>
+                        </div>
+                        <!-- Sun -->
+                        <div class="flex flex-col items-stretch bg-white/[0.02]">
+                            <div
+                                class="h-12 border-b border-white/5 p-3 text-center text-sm font-medium text-neutral-400">
+                                Sun 27</div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div class="h-24 border-b border-white/5"></div>
+                            <div class="h-24 border-b border-white/5"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>

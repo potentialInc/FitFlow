@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow - Notifications</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#B7FF00', // Neon Green
+                            dark: '#8AB800',
+                            light: '#D4FF5C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .mobile-container {
+            max-width: 402px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #0f0f11;
+            position: relative;
+            overflow-x: hidden;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 80px;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-neutral-300 antialiased">
+    <div class="mobile-container flex flex-col h-screen">
+
+        <!-- Header -->
+        <div class="px-6 pt-6 pb-2 sticky top-0 z-20 bg-black/90 backdrop-blur-md border-b border-white/5">
+            <div class="flex items-center gap-4 mb-2">
+                <button onclick="history.back()"
+                    class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-neutral-800 transition-colors">
+                    <iconify-icon icon="solar:arrow-left-linear" width="24" class="text-white"></iconify-icon>
+                </button>
+                <h1 class="text-2xl font-display font-medium text-white">Notifications</h1>
+            </div>
+            <div class="flex justify-between items-center pb-2">
+                <span class="text-xs text-neutral-500 font-medium">You have 3 unread</span>
+                <button class="text-xs text-brand hover:underline">Mark all read</button>
+            </div>
+        </div>
+
+        <!-- List -->
+        <div class="flex-1 overflow-y-auto px-6 py-4 space-y-4">
+
+            <!-- Item 1 (Unread) -->
+            <div
+                class="flex gap-4 p-4 rounded-3xl bg-neutral-900 border border-brand/20 relative overflow-hidden group">
+                <div
+                    class="w-10 h-10 rounded-full bg-brand/10 text-brand flex items-center justify-center flex-shrink-0">
+                    <iconify-icon icon="solar:calendar-bold" width="20"></iconify-icon>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium text-sm mb-1">Class Reminder</h4>
+                    <p class="text-xs text-neutral-400 leading-relaxed">Your "Morning Flow Yoga" class starts in 1 hour.
+                        Don't be late!</p>
+                    <span class="text-[10px] text-neutral-600 mt-2 block">10 mins ago</span>
+                </div>
+                <div class="absolute top-4 right-4 w-2 h-2 rounded-full bg-brand"></div>
+            </div>
+
+            <!-- Item 2 (Unread) -->
+            <div
+                class="flex gap-4 p-4 rounded-3xl bg-neutral-900 border border-brand/20 relative overflow-hidden group">
+                <div
+                    class="w-10 h-10 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center flex-shrink-0">
+                    <iconify-icon icon="solar:chat-round-bold" width="20"></iconify-icon>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium text-sm mb-1">New Message</h4>
+                    <p class="text-xs text-neutral-400 leading-relaxed">Sarah Jenkins sent you a message about your
+                        upcoming session.</p>
+                    <span class="text-[10px] text-neutral-600 mt-2 block">30 mins ago</span>
+                </div>
+                <div class="absolute top-4 right-4 w-2 h-2 rounded-full bg-brand"></div>
+            </div>
+
+            <!-- Item 3 (Read) -->
+            <div
+                class="flex gap-4 p-4 rounded-3xl bg-transparent border border-white/5 relative overflow-hidden opacity-70">
+                <div
+                    class="w-10 h-10 rounded-full bg-neutral-800 text-neutral-400 flex items-center justify-center flex-shrink-0">
+                    <iconify-icon icon="solar:bell-bold" width="20"></iconify-icon>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium text-sm mb-1">Weekly Summary</h4>
+                    <p class="text-xs text-neutral-400 leading-relaxed">You completed 4 workouts last week. Great job!</p>
+                    <span class="text-[10px] text-neutral-600 mt-2 block">1 day ago</span>
+                </div>
+            </div>
+
+            <!-- Item 4 (Read) -->
+            <div
+                class="flex gap-4 p-4 rounded-3xl bg-transparent border border-white/5 relative overflow-hidden opacity-70">
+                <div
+                    class="w-10 h-10 rounded-full bg-neutral-800 text-neutral-400 flex items-center justify-center flex-shrink-0">
+                    <iconify-icon icon="solar:wallet-bold" width="20"></iconify-icon>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium text-sm mb-1">Payment Successful</h4>
+                    <p class="text-xs text-neutral-400 leading-relaxed">Membership payment of $29.99 was successful.</p>
+                    <span class="text-[10px] text-neutral-600 mt-2 block">2 days ago</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow - Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#B7FF00', // Neon Green
+                            dark: '#8AB800',
+                            light: '#D4FF5C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .mobile-container {
+            max-width: 402px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #0f0f11;
+            position: relative;
+            overflow-x: hidden;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 80px;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-neutral-300 antialiased">
+    <div class="mobile-container flex flex-col min-h-screen">
+
+        <!-- Header -->
+        <div class="px-6 py-8 flex flex-col items-center border-b border-white/5 bg-neutral-900/10">
+            <div class="relative mb-4">
+                <div class="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-brand to-transparent">
+                    <img src="https://randomuser.me/api/portraits/men/11.jpg"
+                        class="w-full h-full rounded-full object-cover bg-neutral-800">
+                </div>
+                <button
+                    class="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-neutral-800 border border-white/10 flex items-center justify-center text-white hover:bg-neutral-700">
+                    <iconify-icon icon="solar:camera-linear" width="16"></iconify-icon>
+                </button>
+            </div>
+            <h1 class="text-xl font-display font-medium text-white mb-1">Alex Johnson</h1>
+            <p class="text-sm text-neutral-500">Member since 2023</p>
+
+            <!-- Stats -->
+            <div class="flex gap-12 mt-6">
+                <div class="text-center">
+                    <div class="text-xl font-bold text-white">42</div>
+                    <div class="text-xs text-neutral-500 uppercase tracking-wide">Workouts</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-xl font-bold text-white">1,240</div>
+                    <div class="text-xs text-neutral-500 uppercase tracking-wide">Points</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu -->
+        <div class="flex-1 px-6 py-6 space-y-2">
+
+            <a href="#" class="flex items-center gap-4 p-4 rounded-2xl hover:bg-neutral-900 transition-colors group">
+                <div
+                    class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-black transition-colors">
+                    <iconify-icon icon="solar:card-linear" width="20"></iconify-icon>
+                </div>
+                <div class="flex-1">
+                    <h4 class="text-white font-medium text-sm">Membership</h4>
+                    <p class="text-xs text-neutral-500">Gold Tier • Expires Jan 2026</p>
+                </div>
+                <iconify-icon icon="solar:alt-arrow-right-linear" class="text-neutral-600"></iconify-icon>
+            </a>
+
+            <a href="#" class="flex items-center gap-4 p-4 rounded-2xl hover:bg-neutral-900 transition-colors group">
+                <div
+                    class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-black transition-colors">
+                    <iconify-icon icon="solar:chart-square-linear" width="20"></iconify-icon>
+                </div>
+                <div class="flex-1">
+                    <h4 class="text-white font-medium text-sm">Stats & Progress</h4>
+                    <p class="text-xs text-neutral-500">Weight, measurements</p>
+                </div>
+                <iconify-icon icon="solar:alt-arrow-right-linear" class="text-neutral-600"></iconify-icon>
+            </a>
+
+            <a href="#" class="flex items-center gap-4 p-4 rounded-2xl hover:bg-neutral-900 transition-colors group">
+                <div
+                    class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-black transition-colors">
+                    <iconify-icon icon="solar:settings-linear" width="20"></iconify-icon>
+                </div>
+                <div class="flex-1">
+                    <h4 class="text-white font-medium text-sm">Settings</h4>
+                    <p class="text-xs text-neutral-500">Notifications, password</p>
+                </div>
+                <iconify-icon icon="solar:alt-arrow-right-linear" class="text-neutral-600"></iconify-icon>
+            </a>
+
+            <a href="#" class="flex items-center gap-4 p-4 rounded-2xl hover:bg-neutral-900 transition-colors group">
+                <div
+                    class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-black transition-colors">
+                    <iconify-icon icon="solar:help-linear" width="20"></iconify-icon>
+                </div>
+                <div class="flex-1">
+                    <h4 class="text-white font-medium text-sm">Help Center</h4>
+                </div>
+                <iconify-icon icon="solar:alt-arrow-right-linear" class="text-neutral-600"></iconify-icon>
+            </a>
+
+            <button onclick="window.location.href='login.html'"
+                class="w-full flex items-center gap-4 p-4 rounded-2xl hover:bg-neutral-900 transition-colors group mt-4">
+                <div
+                    class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-red-500 group-hover:bg-red-500/10 transition-colors">
+                    <iconify-icon icon="solar:logout-2-linear" width="20"></iconify-icon>
+                </div>
+                <div class="flex-1 text-left">
+                    <h4 class="text-red-500 font-medium text-sm">Log Out</h4>
+                </div>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+        <div
+            class="w-full pointer-events-auto max-w-[402px] bg-black/90 backdrop-blur-xl border-t border-white/10 pb-6 pt-2 px-6">
+            <div class="flex justify-between items-center">
+                <a href="member-home.html"
+                    class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:home-smile-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Home</span>
+                </a>
+                <a href="classes.html"
+                    class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:calendar-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Classes</span>
+                </a>
+                <a href="workouts.html"
+                    class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:dumbbell-large-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Workouts</span>
+                </a>
+                <a href="trainers.html"
+                    class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:users-group-rounded-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Trainers</span>
+                </a>
+                <a href="profile.html" class="flex flex-col items-center gap-1 text-brand">
+                    <iconify-icon icon="solar:user-circle-bold" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow - Trainers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#B7FF00', // Neon Green
+                            dark: '#8AB800',
+                            light: '#D4FF5C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .mobile-container {
+            max-width: 402px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #0f0f11;
+            position: relative;
+            overflow-x: hidden;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 80px;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-neutral-300 antialiased">
+    <div class="mobile-container flex flex-col h-screen">
+
+        <!-- Header -->
+        <div class="px-6 pt-6 pb-2 sticky top-0 z-20 bg-black/90 backdrop-blur-md">
+            <h1 class="text-2xl font-display font-medium text-white mb-4">Find a Trainer</h1>
+
+            <!-- Search -->
+            <div class="relative mb-4">
+                <iconify-icon icon="solar:magnifer-linear"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500" width="20"></iconify-icon>
+                <input type="text" placeholder="Search by name or goal..."
+                    class="w-full bg-neutral-900 border border-white/10 rounded-2xl py-3 pl-12 pr-4 text-white placeholder-slate-600 focus:outline-none focus:border-brand">
+            </div>
+
+            <!-- Filters -->
+            <div class="flex gap-2 overflow-x-auto no-scrollbar pb-2">
+                <button
+                    class="px-4 py-2 rounded-full bg-brand text-black text-sm font-medium whitespace-nowrap">All</button>
+                <button
+                    class="px-4 py-2 rounded-full bg-neutral-900 border border-white/10 text-neutral-300 text-sm font-medium whitespace-nowrap">Weight
+                    Loss</button>
+                <button
+                    class="px-4 py-2 rounded-full bg-neutral-900 border border-white/10 text-neutral-300 text-sm font-medium whitespace-nowrap">Strength</button>
+                <button
+                    class="px-4 py-2 rounded-full bg-neutral-900 border border-white/10 text-neutral-300 text-sm font-medium whitespace-nowrap">Rehab</button>
+            </div>
+        </div>
+
+        <!-- List -->
+        <div class="flex-1 overflow-y-auto px-6 py-4 space-y-4">
+
+            <!-- Trainer Card 1 -->
+            <a href="trainer-profile.html"
+                class="flex flex-col bg-neutral-900/50 border border-white/5 rounded-3xl p-5 hover:bg-neutral-800/80 transition-colors group">
+                <div class="flex gap-4 mb-4">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                        class="w-16 h-16 rounded-2xl object-cover">
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h3
+                                class="text-lg font-display text-white font-medium group-hover:text-brand transition-colors">
+                                Sarah Jenkins</h3>
+                            <div
+                                class="flex items-center gap-1 text-yellow-400 text-xs font-bold bg-yellow-400/10 px-2 py-0.5 rounded">
+                                <iconify-icon icon="solar:star-bold"></iconify-icon> 4.9
+                            </div>
+                        </div>
+                        <p class="text-sm text-neutral-500 mb-2">Yoga & Mobility Specialist</p>
+                        <div class="flex gap-2">
+                            <span
+                                class="text-[10px] uppercase font-bold text-neutral-400 bg-white/5 px-2 py-1 rounded">Flexibility</span>
+                            <span
+                                class="text-[10px] uppercase font-bold text-neutral-400 bg-white/5 px-2 py-1 rounded">Relax</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-t border-white/5 pt-4 mt-auto">
+                    <span class="text-white font-medium">$50 <span class="text-neutral-500 text-xs font-normal">/
+                            session</span></span>
+                    <button class="text-sm font-medium text-brand hover:underline">View Profile</button>
+                </div>
+            </a>
+
+            <!-- Trainer Card 2 -->
+            <a href="trainer-profile.html"
+                class="flex flex-col bg-neutral-900/50 border border-white/5 rounded-3xl p-5 hover:bg-neutral-800/80 transition-colors group">
+                <div class="flex gap-4 mb-4">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                        class="w-16 h-16 rounded-2xl object-cover">
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h3
+                                class="text-lg font-display text-white font-medium group-hover:text-brand transition-colors">
+                                Mike Tyson</h3>
+                            <div
+                                class="flex items-center gap-1 text-yellow-400 text-xs font-bold bg-yellow-400/10 px-2 py-0.5 rounded">
+                                <iconify-icon icon="solar:star-bold"></iconify-icon> 5.0
+                            </div>
+                        </div>
+                        <p class="text-sm text-neutral-500 mb-2">HIIT & Strength Coach</p>
+                        <div class="flex gap-2">
+                            <span
+                                class="text-[10px] uppercase font-bold text-neutral-400 bg-white/5 px-2 py-1 rounded">Cardio</span>
+                            <span
+                                class="text-[10px] uppercase font-bold text-neutral-400 bg-white/5 px-2 py-1 rounded">Power</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-t border-white/5 pt-4 mt-auto">
+                    <span class="text-white font-medium">$75 <span class="text-neutral-500 text-xs font-normal">/
+                            session</span></span>
+                    <button class="text-sm font-medium text-brand hover:underline">View Profile</button>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+        <div
+            class="w-full pointer-events-auto max-w-[402px] bg-black/90 backdrop-blur-xl border-t border-white/10 pb-6 pt-2 px-6">
+            <div class="flex justify-between items-center">
+                <a href="member-home.html"
+                    class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:home-smile-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Home</span>
+                </a>
+                <a href="classes.html"
+                    class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:calendar-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Classes</span>
+                </a>
+                <a href="workouts.html"
+                    class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:dumbbell-large-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Workouts</span>
+                </a>
+                <a href="trainers.html" class="flex flex-col items-center gap-1 text-brand">
+                    <iconify-icon icon="solar:users-group-rounded-bold" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Trainers</span>
+                </a>
+                <a href="profile.html"
+                    class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:user-circle-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

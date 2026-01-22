@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow Trainer - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#B7FF00', // Neon Green
+                            dark: '#8AB800',
+                            light: '#D4FF5C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .mobile-container {
+            max-width: 402px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #0f0f11;
+            position: relative;
+            overflow-x: hidden;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 80px;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-neutral-300 antialiased">
+    <div class="mobile-container p-6 space-y-6">
+
+        <!-- Header -->
+        <div class="flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-neutral-800 overflow-hidden">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h1 class="text-lg font-display font-medium text-white">Hi, Sarah</h1>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <button
+                    class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-neutral-800 transition-colors relative">
+                    <iconify-icon icon="solar:bell-linear" width="20" class="text-white"></iconify-icon>
+                    <div class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-black"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Earnings Snapshot -->
+        <div class="bg-neutral-900 rounded-[2rem] p-6 border border-white/5 relative overflow-hidden group">
+            <div class="flex justify-between items-start mb-2">
+                <span class="text-xs font-semibold text-neutral-500 uppercase tracking-wide">This Month Earnings</span>
+                <button onclick="this.parentElement.nextElementSibling.classList.toggle('blur-sm')"
+                    class="text-neutral-500 hover:text-white">
+                    <iconify-icon icon="solar:eye-linear" width="20"></iconify-icon>
+                </button>
+            </div>
+            <h2 class="text-4xl font-display font-medium text-white mb-4 transition-all">$2,400<span
+                    class="text-neutral-500 text-lg font-normal">.00</span></h2>
+
+            <div class="flex gap-2">
+                <div
+                    class="bg-green-500/10 text-green-500 text-xs px-2 py-1 rounded-full flex items-center gap-1 font-medium">
+                    <iconify-icon icon="solar:graph-up-linear"></iconify-icon> +12%
+                </div>
+                <div class="text-xs text-neutral-500 py-1">vs last month</div>
+            </div>
+        </div>
+
+        <!-- Next Up (Hero Card) -->
+        <div>
+            <h3 class="text-lg font-display font-medium text-white mb-3">Up Next</h3>
+            <div class="bg-brand rounded-[2rem] p-6 text-black relative shadow-lg shadow-brand/10">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <p class="font-bold text-sm opacity-60 uppercase tracking-wide mb-1">Session Starts In</p>
+                        <h2 class="text-3xl font-display font-bold">15<span class="text-lg font-medium">m</span> 00<span
+                                class="text-lg font-medium">s</span></h2>
+                    </div>
+                    <div class="w-12 h-12 rounded-2xl bg-black/10 flex items-center justify-center">
+                        <iconify-icon icon="solar:clock-circle-bold" width="24"></iconify-icon>
+                    </div>
+                </div>
+
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-4 flex items-center gap-4 mb-4">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                        class="w-12 h-12 rounded-full object-cover shadow-sm">
+                    <div>
+                        <h4 class="font-bold text-lg leading-tight">Mike Tyson</h4>
+                        <p class="text-sm opacity-70">1:1 Strength Training</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-2">
+                    <button
+                        class="flex-1 h-12 bg-black text-white rounded-full font-medium text-sm flex items-center justify-center hover:bg-black/80 transition-colors">Start
+                        Session</button>
+                    <button
+                        class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center border border-black/10 hover:bg-white/80 transition-colors">
+                        <iconify-icon icon="solar:chat-round-line-linear" width="20"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div>
+            <h3 class="text-lg font-display font-medium text-white mb-3">Today's Schedule</h3>
+            <div class="space-y-4">
+
+                <!-- Item 1 (Done) -->
+                <div class="flex gap-4 opacity-50">
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="text-xs font-mono text-neutral-500 pt-1">09:00</span>
+                        <div class="w-px h-full bg-white/10"></div>
+                    </div>
+                    <div class="flex-1 bg-neutral-900 border border-white/5 rounded-2xl p-4">
+                        <h4 class="text-white font-medium line-through">Morning Yoga Class</h4>
+                        <p class="text-xs text-neutral-500">Studio A • 15 Attendees</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 (Active/Next) -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="text-xs font-mono text-brand font-bold pt-1">11:00</span>
+                        <div class="w-px h-full bg-brand/50"></div>
+                    </div>
+                    <div
+                        class="flex-1 bg-neutral-900 border border-brand/50 rounded-2xl p-4 shadow-[0_0_15px_rgba(183,255,0,0.05)]">
+                        <h4 class="text-white font-medium">Mike Tyson</h4>
+                        <p class="text-xs text-neutral-500">PT Session • Main Floor</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="text-xs font-mono text-neutral-300 pt-1">14:00</span>
+                        <div class="w-px h-full bg-transparent"></div>
+                    </div>
+                    <div class="flex-1 bg-neutral-900 border border-white/5 rounded-2xl p-4">
+                        <h4 class="text-white font-medium">Alex Johnson</h4>
+                        <p class="text-xs text-neutral-500">PT Session • Free Weights</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+        <div
+            class="w-full pointer-events-auto max-w-[402px] bg-black/90 backdrop-blur-xl border-t border-white/10 pb-6 pt-2 px-6">
+            <div class="flex justify-between items-center">
+                <a href="trainer-home.html" class="flex flex-col items-center gap-1 text-brand">
+                    <iconify-icon icon="solar:home-smile-bold" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Home</span>
+                </a>
+                <a href="clients.html"
+                    class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:users-group-rounded-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Clients</span>
+                </a>
+                <a href="plan-builder.html"
+                    class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:dumbbell-large-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Plans</span>
+                </a>
+                <a href="#" class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:user-circle-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

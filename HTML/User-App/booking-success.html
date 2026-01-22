@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow - Booking Confirmed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#B7FF00', // Neon Green
+                            dark: '#8AB800',
+                            light: '#D4FF5C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        .mobile-container {
+            max-width: 402px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #0f0f11;
+            position: relative;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .success-checkmark {
+            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-black text-neutral-300 antialiased">
+    <div class="mobile-container p-8 text-center">
+
+        <div
+            class="w-24 h-24 rounded-full bg-brand flex items-center justify-center text-black mb-6 success-checkmark shadow-[0_0_40px_rgba(183,255,0,0.4)]">
+            <iconify-icon icon="solar:check-circle-bold" width="48"></iconify-icon>
+        </div>
+
+        <h1 class="text-3xl font-display font-medium text-white mb-2">You're In!</h1>
+        <p class="text-neutral-400 mb-8">Booking confirmed for <span class="text-white font-medium">Morning Flow
+                Yoga</span>.</p>
+
+        <!-- Ticket Card -->
+        <div class="w-full bg-neutral-900 border border-white/10 rounded-3xl p-6 mb-8 relative">
+            <div class="flex justify-between items-center mb-4 pb-4 border-b border-white/5 border-dashed">
+                <span class="text-xs text-neutral-500 uppercase">Date</span>
+                <span class="text-white font-mono">Oct 24, 08:00</span>
+            </div>
+            <div class="flex justify-between items-center mb-4 pb-4 border-b border-white/5 border-dashed">
+                <span class="text-xs text-neutral-500 uppercase">Location</span>
+                <span class="text-white">Studio A</span>
+            </div>
+            <div class="flex justify-between items-center">
+                <span class="text-xs text-neutral-500 uppercase">Instructor</span>
+                <span class="text-white">Sarah Jenkins</span>
+            </div>
+
+            <!-- Cutout Circles -->
+            <div class="absolute top-[48%] -left-3 w-6 h-6 rounded-full bg-[#0f0f11]"></div>
+            <div class="absolute top-[48%] -right-3 w-6 h-6 rounded-full bg-[#0f0f11]"></div>
+        </div>
+
+        <div class="w-full space-y-3">
+            <button onclick="window.location.href='member-home.html'"
+                class="w-full h-14 bg-white text-black rounded-full font-bold text-base hover:bg-neutral-200 transition-colors">
+                Back to Home
+            </button>
+            <button onclick="window.location.href='my-bookings.html'"
+                class="w-full h-14 bg-transparent border border-white/10 text-white rounded-full font-medium text-base hover:bg-white/5 transition-colors">
+                View My Bookings
+            </button>
+        </div>
+
+    </div>
+</body>
+
+</html>

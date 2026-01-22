@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow - Classes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#B7FF00', // Neon Green
+                            dark: '#8AB800',
+                            light: '#D4FF5C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .mobile-container {
+            max-width: 402px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #0f0f11;
+            position: relative;
+            overflow-x: hidden;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 80px;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-neutral-300 antialiased">
+    <div class="mobile-container flex flex-col h-screen">
+
+        <!-- Header -->
+        <div class="px-6 pt-6 pb-4 bg-black/90 backdrop-blur-md sticky top-0 z-20">
+            <h1 class="text-2xl font-display font-medium text-white mb-4">Class Schedule</h1>
+
+            <!-- Date Strip -->
+            <div class="flex overflow-x-auto gap-3 pb-2 no-scrollbar">
+                <button
+                    class="flex-shrink-0 flex flex-col items-center justify-center w-14 h-20 bg-brand rounded-2xl text-black shadow-lg shadow-brand/20">
+                    <span class="text-xs font-semibold">MON</span>
+                    <span class="text-xl font-bold">21</span>
+                </button>
+                <button
+                    class="flex-shrink-0 flex flex-col items-center justify-center w-14 h-20 bg-neutral-900 rounded-2xl text-neutral-400 border border-white/5">
+                    <span class="text-xs font-medium">TUE</span>
+                    <span class="text-xl font-medium text-white">22</span>
+                </button>
+                <button
+                    class="flex-shrink-0 flex flex-col items-center justify-center w-14 h-20 bg-neutral-900 rounded-2xl text-neutral-400 border border-white/5">
+                    <span class="text-xs font-medium">WED</span>
+                    <span class="text-xl font-medium text-white">23</span>
+                </button>
+                <button
+                    class="flex-shrink-0 flex flex-col items-center justify-center w-14 h-20 bg-neutral-900 rounded-2xl text-neutral-400 border border-white/5">
+                    <span class="text-xs font-medium">THU</span>
+                    <span class="text-xl font-medium text-white">24</span>
+                </button>
+                <button
+                    class="flex-shrink-0 flex flex-col items-center justify-center w-14 h-20 bg-neutral-900 rounded-2xl text-neutral-400 border border-white/5">
+                    <span class="text-xs font-medium">FRI</span>
+                    <span class="text-xl font-medium text-white">25</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="px-6 py-2 flex gap-2 overflow-x-auto no-scrollbar mb-2">
+            <button class="px-4 py-2 rounded-full bg-white text-black text-sm font-medium whitespace-nowrap">All
+                Classes</button>
+            <button
+                class="px-4 py-2 rounded-full bg-neutral-900 border border-white/10 text-neutral-300 text-sm font-medium whitespace-nowrap">Yoga</button>
+            <button
+                class="px-4 py-2 rounded-full bg-neutral-900 border border-white/10 text-neutral-300 text-sm font-medium whitespace-nowrap">HIIT</button>
+            <button
+                class="px-4 py-2 rounded-full bg-neutral-900 border border-white/10 text-neutral-300 text-sm font-medium whitespace-nowrap">Strength</button>
+        </div>
+
+        <!-- Class List -->
+        <div class="flex-1 overflow-y-auto px-6 py-4 space-y-4">
+
+            <!-- Class Item 1 -->
+            <a href="class-detail.html"
+                class="block bg-neutral-900/50 border border-white/5 rounded-3xl p-5 hover:bg-neutral-800/50 transition-colors group">
+                <div class="flex justify-between items-start mb-3">
+                    <div class="flex gap-3">
+                        <span class="font-mono text-brand font-medium pt-1">08:00</span>
+                        <div>
+                            <h3
+                                class="text-lg font-display text-white font-medium group-hover:text-brand transition-colors">
+                                Morning Flow Yoga</h3>
+                            <p class="text-sm text-neutral-500">45 min • Studio A</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between mt-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-gray-700 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs text-neutral-400">Sarah</span>
+                    </div>
+                    <span class="text-xs font-medium bg-neutral-800 text-neutral-300 px-3 py-1 rounded-full">3 spots
+                        left</span>
+                </div>
+            </a>
+
+            <!-- Class Item 2 -->
+            <a href="class-detail.html"
+                class="block bg-neutral-900/50 border border-white/5 rounded-3xl p-5 hover:bg-neutral-800/50 transition-colors group">
+                <div class="flex justify-between items-start mb-3">
+                    <div class="flex gap-3">
+                        <span class="font-mono text-brand font-medium pt-1">10:00</span>
+                        <div>
+                            <h3
+                                class="text-lg font-display text-white font-medium group-hover:text-brand transition-colors">
+                                BodyPump Express</h3>
+                            <p class="text-sm text-neutral-500">30 min • Main Floor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between mt-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-gray-700 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs text-neutral-400">Mike T.</span>
+                    </div>
+                    <button
+                        class="text-xs font-bold bg-white text-black px-4 py-2 rounded-full hover:bg-neutral-200">Book</button>
+                </div>
+            </a>
+
+            <!-- Class Item 3 -->
+            <div class="block bg-neutral-900/50 border border-white/5 rounded-3xl p-5 opacity-60">
+                <div class="flex justify-between items-start mb-3">
+                    <div class="flex gap-3">
+                        <span class="font-mono text-neutral-500 font-medium pt-1">12:00</span>
+                        <div>
+                            <h3 class="text-lg font-display text-neutral-400 font-medium">CrossFit WOD</h3>
+                            <p class="text-sm text-neutral-600">60 min • Box Area</p>
+                        </div>
+                    </div>
+                    <span
+                        class="text-xs font-medium text-red-400 uppercase tracking-wide border border-red-900/30 bg-red-900/10 px-2 py-1 rounded">Full</span>
+                </div>
+                <div class="flex items-center justify-between mt-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-gray-700 overflow-hidden grayscale">
+                            <img src="https://randomuser.me/api/portraits/men/11.jpg"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs text-neutral-500">Alex</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+        <div
+            class="w-full pointer-events-auto max-w-[402px] bg-black/90 backdrop-blur-xl border-t border-white/10 pb-6 pt-2 px-6">
+            <div class="flex justify-between items-center">
+                <a href="member-home.html"
+                    class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:home-smile-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Home</span>
+                </a>
+                <a href="classes.html" class="flex flex-col items-center gap-1 text-brand">
+                    <iconify-icon icon="solar:calendar-bold" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Classes</span>
+                </a>
+                <a href="workouts.html"
+                    class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:dumbbell-large-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Workouts</span>
+                </a>
+                <a href="trainers.html"
+                    class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:users-group-rounded-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Trainers</span>
+                </a>
+                <a href="profile.html"
+                    class="flex flex-col items-center gap-1 text-neutral-500 hover:text-white transition-colors">
+                    <iconify-icon icon="solar:user-circle-linear" width="24"></iconify-icon>
+                    <span class="text-[10px] font-medium">Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

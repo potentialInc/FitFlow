@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow - Exercises</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#B7FF00', // Neon Green
+                            dark: '#8AB800',
+                            light: '#D4FF5C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .mobile-container {
+            max-width: 402px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #0f0f11;
+            position: relative;
+            overflow-x: hidden;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 80px;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-neutral-300 antialiased">
+    <div class="mobile-container flex flex-col h-screen">
+
+        <!-- Header -->
+        <div class="px-6 pt-6 pb-2 sticky top-0 z-20 bg-black/90 backdrop-blur-md">
+            <div class="flex items-center gap-4 mb-4">
+                <button onclick="history.back()"
+                    class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-neutral-800 transition-colors">
+                    <iconify-icon icon="solar:arrow-left-linear" width="24" class="text-white"></iconify-icon>
+                </button>
+                <h1 class="text-2xl font-display font-medium text-white">Exercises</h1>
+            </div>
+
+            <!-- Search -->
+            <div class="relative mb-2">
+                <iconify-icon icon="solar:magnifer-linear"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500" width="20"></iconify-icon>
+                <input type="text" placeholder="Search exercises..."
+                    class="w-full bg-neutral-900 border border-white/10 rounded-2xl py-3 pl-12 pr-4 text-white placeholder-slate-600 focus:outline-none focus:border-brand">
+            </div>
+
+            <!-- Chips -->
+            <div class="flex gap-2 overflow-x-auto no-scrollbar pb-2">
+                <button
+                    class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold whitespace-nowrap">All</button>
+                <button
+                    class="px-4 py-2 rounded-full bg-neutral-900 border border-white/10 text-neutral-400 text-xs font-medium whitespace-nowrap hover:text-white hover:bg-white/5">Chest</button>
+                <button
+                    class="px-4 py-2 rounded-full bg-neutral-900 border border-white/10 text-neutral-400 text-xs font-medium whitespace-nowrap hover:text-white hover:bg-white/5">Back</button>
+                <button
+                    class="px-4 py-2 rounded-full bg-neutral-900 border border-white/10 text-neutral-400 text-xs font-medium whitespace-nowrap hover:text-white hover:bg-white/5">Legs</button>
+                <button
+                    class="px-4 py-2 rounded-full bg-neutral-900 border border-white/10 text-neutral-400 text-xs font-medium whitespace-nowrap hover:text-white hover:bg-white/5">Arms</button>
+            </div>
+        </div>
+
+        <!-- List -->
+        <div class="flex-1 overflow-y-auto px-6 py-4 space-y-4">
+
+            <!-- Item 1 -->
+            <div
+                class="bg-neutral-900/50 border border-white/5 rounded-2xl p-4 flex gap-4 items-center hover:bg-neutral-800/80 transition-colors cursor-pointer">
+                <div class="w-16 h-16 rounded-xl bg-white/5 flex items-center justify-center">
+                    <iconify-icon icon="mdi:weight-lifter" width="32" class="text-white"></iconify-icon>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium">Barbell Squat</h4>
+                    <p class="text-xs text-neutral-500">Legs • Compound</p>
+                </div>
+                <iconify-icon icon="solar:alt-arrow-right-linear" class="text-neutral-600 ml-auto"></iconify-icon>
+            </div>
+
+            <!-- Item 2 -->
+            <div
+                class="bg-neutral-900/50 border border-white/5 rounded-2xl p-4 flex gap-4 items-center hover:bg-neutral-800/80 transition-colors cursor-pointer">
+                <div class="w-16 h-16 rounded-xl bg-white/5 flex items-center justify-center">
+                    <iconify-icon icon="mdi:arm-flex" width="32" class="text-white"></iconify-icon>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium">Bench Press</h4>
+                    <p class="text-xs text-neutral-500">Chest • Compound</p>
+                </div>
+                <iconify-icon icon="solar:alt-arrow-right-linear" class="text-neutral-600 ml-auto"></iconify-icon>
+            </div>
+
+            <!-- Item 3 -->
+            <div
+                class="bg-neutral-900/50 border border-white/5 rounded-2xl p-4 flex gap-4 items-center hover:bg-neutral-800/80 transition-colors cursor-pointer">
+                <div class="w-16 h-16 rounded-xl bg-white/5 flex items-center justify-center">
+                    <iconify-icon icon="mdi:human-handsup" width="32" class="text-white"></iconify-icon>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium">Pull Up</h4>
+                    <p class="text-xs text-neutral-500">Back • Compound</p>
+                </div>
+                <iconify-icon icon="solar:alt-arrow-right-linear" class="text-neutral-600 ml-auto"></iconify-icon>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

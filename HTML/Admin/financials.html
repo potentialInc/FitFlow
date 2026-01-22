@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow Admin - Financials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#B7FF00', // Neon Green
+                            dark: '#8AB800',
+                            light: '#D4FF5C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f0f11;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            rounded: 3px;
+        }
+    </style>
+</head>
+
+<body class="bg-[#0f0f11] text-neutral-300 antialiased flex h-screen overflow-hidden">
+
+    <!-- Sidebar (Reused) -->
+    <aside class="w-64 bg-black border-r border-white/5 flex flex-col hidden lg:flex relative z-20">
+        <div class="p-8">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center border border-white/10 shadow-lg shadow-brand/10">
+                    <iconify-icon icon="solar:bolt-circle-bold" width="24" class="text-brand"></iconify-icon>
+                </div>
+                <span class="text-xl font-display font-medium text-white tracking-tight">FitFlow</span>
+            </div>
+        </div>
+
+        <nav class="flex-1 px-4 space-y-2 overflow-y-auto">
+            <p class="px-4 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2 mt-4">Overview</p>
+            <a href="dashboard.html"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:widget-linear" width="20"></iconify-icon>
+                <span class="font-medium">Dashboard</span>
+            </a>
+
+            <p class="px-4 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2 mt-6">Management</p>
+            <a href="users.html"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:users-group-rounded-linear" width="20"></iconify-icon>
+                <span class="font-medium">Users</span>
+            </a>
+            <a href="schedule.html"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:calendar-date-linear" width="20"></iconify-icon>
+                <span class="font-medium">Schedule</span>
+            </a>
+            <a href="facility.html"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:dumbbell-large-linear" width="20"></iconify-icon>
+                <span class="font-medium">Facility</span>
+            </a>
+
+            <p class="px-4 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2 mt-6">Reports</p>
+            <a href="financials.html"
+                class="flex items-center gap-3 px-4 py-3 bg-white/5 text-white rounded-xl border border-white/5 transition-colors">
+                <iconify-icon icon="solar:chart-square-linear" width="20"></iconify-icon>
+                <span class="font-medium">Financials</span>
+            </a>
+        </nav>
+
+        <div class="p-6 border-t border-white/5">
+            <div class="flex items-center gap-3">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg"
+                    class="w-10 h-10 rounded-full border border-white/10">
+                <div>
+                    <p class="text-sm font-medium text-white">Admin User</p>
+                    <p class="text-xs text-neutral-500">Super Admin</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col overflow-hidden relative">
+        <!-- Top Bar -->
+        <header
+            class="h-20 bg-[#0f0f11]/80 backdrop-blur-md border-b border-white/5 flex items-center justify-between px-8 sticky top-0 z-10">
+            <div class="flex items-center gap-4 lg:hidden">
+                <button class="text-white"><iconify-icon icon="solar:hamburger-menu-linear"
+                        width="24"></iconify-icon></button>
+                <span class="text-xl font-display font-medium text-white">FitFlow</span>
+            </div>
+            <div class="hidden lg:block">
+                <h2 class="text-xl font-display font-medium text-white">Financial Reports</h2>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button
+                    class="bg-neutral-900 border border-white/10 text-white text-sm px-4 py-2 rounded-full flex items-center gap-2 hover:bg-white/5 transition-colors">
+                    <iconify-icon icon="solar:download-minimalistic-bold" width="18"></iconify-icon>
+                    Export Report
+                </button>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <div class="flex-1 overflow-y-auto p-8 space-y-8">
+
+            <!-- Cards -->
+            <div class="grid grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-neutral-900 to-black border border-white/5 p-6 rounded-[2rem]">
+                    <p class="text-neutral-500 text-sm font-medium mb-1">Total Revenue (YTD)</p>
+                    <h3 class="text-4xl font-display font-medium text-white">$482,500</h3>
+                    <div class="mt-4 h-16 flex items-end gap-1">
+                        <div class="bg-brand w-3 h-[40%] rounded-t-sm"></div>
+                        <div class="bg-brand w-3 h-[60%] rounded-t-sm"></div>
+                        <div class="bg-brand w-3 h-[50%] rounded-t-sm"></div>
+                        <div class="bg-brand w-3 h-[80%] rounded-t-sm"></div>
+                        <div class="bg-brand w-3 h-[70%] rounded-t-sm"></div>
+                        <div class="bg-brand w-3 h-[90%] rounded-t-sm"></div>
+                    </div>
+                </div>
+                <div class="bg-neutral-900 border border-white/5 p-6 rounded-[2rem]">
+                    <p class="text-neutral-500 text-sm font-medium mb-1">Recurring Revenue (MRR)</p>
+                    <h3 class="text-4xl font-display font-medium text-white">$45,200</h3>
+                    <p class="text-xs text-green-500 mt-2 font-bold flex items-center gap-1"><iconify-icon
+                            icon="solar:graph-up-linear"></iconify-icon> +5.4% vs last month</p>
+                </div>
+                <div class="bg-neutral-900 border border-white/5 p-6 rounded-[2rem]">
+                    <p class="text-neutral-500 text-sm font-medium mb-1">Avg. Revenue Per User</p>
+                    <h3 class="text-4xl font-display font-medium text-white">$65.00</h3>
+                    <p class="text-xs text-neutral-500 mt-2">Stable</p>
+                </div>
+            </div>
+
+            <!-- Transactions Table -->
+            <div class="bg-neutral-900 border border-white/5 rounded-[2rem] overflow-hidden">
+                <div class="p-6 border-b border-white/5 flex justify-between items-center">
+                    <h3 class="text-lg font-medium text-white">Recent Transactions</h3>
+                    <button class="text-sm text-brand hover:underline">View All</button>
+                </div>
+                <table class="w-full text-left">
+                    <thead class="bg-black/20 text-xs text-neutral-500 font-bold uppercase tracking-wider">
+                        <tr>
+                            <th class="p-6 font-medium">ID</th>
+                            <th class="p-6 font-medium">User</th>
+                            <th class="p-6 font-medium">Type</th>
+                            <th class="p-6 font-medium">Date</th>
+                            <th class="p-6 font-medium text-right">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/5 text-sm text-neutral-300">
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-6 font-mono text-neutral-500">#INV-2049</td>
+                            <td class="p-6 font-medium text-white">Michael Jordan</td>
+                            <td class="p-6">Membership (Gold)</td>
+                            <td class="p-6">Oct 24, 2024</td>
+                            <td class="p-6 text-right font-medium text-white">$49.99</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-6 font-mono text-neutral-500">#INV-2048</td>
+                            <td class="p-6 font-medium text-white">Sarah Connor</td>
+                            <td class="p-6">PT Session (1h)</td>
+                            <td class="p-6">Oct 24, 2024</td>
+                            <td class="p-6 text-right font-medium text-white">$85.00</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-6 font-mono text-neutral-500">#INV-2047</td>
+                            <td class="p-6 font-medium text-white">Guest User</td>
+                            <td class="p-6">Day Pass</td>
+                            <td class="p-6">Oct 24, 2024</td>
+                            <td class="p-6 text-right font-medium text-white">$15.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>

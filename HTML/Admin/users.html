@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow Admin - Users</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#B7FF00', // Neon Green
+                            dark: '#8AB800',
+                            light: '#D4FF5C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f0f11;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            rounded: 3px;
+        }
+    </style>
+</head>
+
+<body class="bg-[#0f0f11] text-neutral-300 antialiased flex h-screen overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-black border-r border-white/5 flex flex-col hidden lg:flex relative z-20">
+        <div class="p-8">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center border border-white/10 shadow-lg shadow-brand/10">
+                    <iconify-icon icon="solar:bolt-circle-bold" width="24" class="text-brand"></iconify-icon>
+                </div>
+                <span class="text-xl font-display font-medium text-white tracking-tight">FitFlow</span>
+            </div>
+        </div>
+
+        <nav class="flex-1 px-4 space-y-2 overflow-y-auto">
+            <p class="px-4 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2 mt-4">Overview</p>
+            <a href="dashboard.html"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:widget-linear" width="20"></iconify-icon>
+                <span class="font-medium">Dashboard</span>
+            </a>
+
+            <p class="px-4 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2 mt-6">Management</p>
+            <a href="users.html"
+                class="flex items-center gap-3 px-4 py-3 bg-white/5 text-white rounded-xl border border-white/5 transition-colors">
+                <iconify-icon icon="solar:users-group-rounded-linear" width="20"></iconify-icon>
+                <span class="font-medium">Users</span>
+            </a>
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:calendar-date-linear" width="20"></iconify-icon>
+                <span class="font-medium">Schedule</span>
+            </a>
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:dumbbell-large-linear" width="20"></iconify-icon>
+                <span class="font-medium">Facility</span>
+            </a>
+
+            <p class="px-4 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2 mt-6">Reports</p>
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <iconify-icon icon="solar:chart-square-linear" width="20"></iconify-icon>
+                <span class="font-medium">Financials</span>
+            </a>
+        </nav>
+
+        <div class="p-6 border-t border-white/5">
+            <div class="flex items-center gap-3">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg"
+                    class="w-10 h-10 rounded-full border border-white/10">
+                <div>
+                    <p class="text-sm font-medium text-white">Admin User</p>
+                    <p class="text-xs text-neutral-500">Super Admin</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col overflow-hidden relative">
+        <!-- Top Bar -->
+        <header
+            class="h-20 bg-[#0f0f11]/80 backdrop-blur-md border-b border-white/5 flex items-center justify-between px-8 sticky top-0 z-10">
+            <div class="flex items-center gap-4 lg:hidden">
+                <button class="text-white"><iconify-icon icon="solar:hamburger-menu-linear"
+                        width="24"></iconify-icon></button>
+                <span class="text-xl font-display font-medium text-white">FitFlow</span>
+            </div>
+            <div class="hidden lg:block">
+                <h2 class="text-xl font-display font-medium text-white">User Management</h2>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button
+                    class="bg-brand text-black font-bold text-sm px-4 py-2 rounded-full flex items-center gap-2 hover:bg-brand/90 transition-colors">
+                    <iconify-icon icon="solar:add-circle-bold" width="18"></iconify-icon>
+                    Add User
+                </button>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <div class="flex-1 overflow-y-auto p-8">
+
+            <div
+                class="bg-neutral-900 border border-white/5 rounded-[2rem] overflow-hidden flex flex-col h-full max-h-[calc(100vh-8rem)]">
+
+                <!-- Toolbar -->
+                <div class="p-6 border-b border-white/5 flex flex-col md:flex-row justify-between gap-4 items-center">
+                    <div class="flex bg-black/50 p-1 rounded-xl border border-white/10 w-full md:w-auto">
+                        <button
+                            class="px-4 py-2 rounded-lg bg-neutral-800 text-white text-sm font-medium border border-white/5 shadow-lg">Members</button>
+                        <button
+                            class="px-4 py-2 rounded-lg text-neutral-500 text-sm font-medium hover:text-white transition-colors">Trainers</button>
+                        <button
+                            class="px-4 py-2 rounded-lg text-neutral-500 text-sm font-medium hover:text-white transition-colors">Staff</button>
+                    </div>
+
+                    <div class="flex gap-4 w-full md:w-auto">
+                        <div class="relative flex-1 md:w-64">
+                            <iconify-icon icon="solar:magnifer-linear"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500"></iconify-icon>
+                            <input type="text" placeholder="Search users..."
+                                class="w-full bg-black/50 border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm text-white focus:border-brand focus:outline-none">
+                        </div>
+                        <button
+                            class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-white/5 transition-colors">
+                            <iconify-icon icon="solar:filter-linear" width="20"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="flex-1 overflow-auto">
+                    <table class="w-full text-left">
+                        <thead
+                            class="bg-black/20 text-xs text-neutral-500 font-bold uppercase tracking-wider sticky top-0 z-10 backdrop-blur-md">
+                            <tr>
+                                <th class="p-6 font-medium">User</th>
+                                <th class="p-6 font-medium">Status</th>
+                                <th class="p-6 font-medium">Plan</th>
+                                <th class="p-6 font-medium">Joined</th>
+                                <th class="p-6 font-medium text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5 text-sm text-neutral-300">
+                            <!-- Row 1 -->
+                            <tr class="hover:bg-white/5 transition-colors group">
+                                <td class="p-6">
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                                            class="w-10 h-10 rounded-full object-cover">
+                                        <div>
+                                            <p class="font-medium text-white">Mike Tyson</p>
+                                            <p class="text-xs text-neutral-500">mike@example.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-6">
+                                    <span
+                                        class="bg-green-500/10 text-green-500 px-2 py-1 rounded-full text-xs font-bold border border-green-500/20">Active</span>
+                                </td>
+                                <td class="p-6">Gold Tier</td>
+                                <td class="p-6">Oct 24, 2023</td>
+                                <td class="p-6 text-right">
+                                    <button class="text-neutral-500 hover:text-brand transition-colors"><iconify-icon
+                                            icon="solar:menu-dots-bold" width="20"></iconify-icon></button>
+                                </td>
+                            </tr>
+
+                            <!-- Row 2 -->
+                            <tr class="hover:bg-white/5 transition-colors group">
+                                <td class="p-6">
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                                            class="w-10 h-10 rounded-full object-cover">
+                                        <div>
+                                            <p class="font-medium text-white">Sarah Jenkins</p>
+                                            <p class="text-xs text-neutral-500">sarah.j@example.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-6">
+                                    <span
+                                        class="bg-red-500/10 text-red-500 px-2 py-1 rounded-full text-xs font-bold border border-red-500/20">Expired</span>
+                                </td>
+                                <td class="p-6">Silver Tier</td>
+                                <td class="p-6">Jan 12, 2024</td>
+                                <td class="p-6 text-right">
+                                    <button class="text-neutral-500 hover:text-brand transition-colors"><iconify-icon
+                                            icon="solar:menu-dots-bold" width="20"></iconify-icon></button>
+                                </td>
+                            </tr>
+
+                            <!-- Row 3 -->
+                            <tr class="hover:bg-white/5 transition-colors group">
+                                <td class="p-6">
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://randomuser.me/api/portraits/men/11.jpg"
+                                            class="w-10 h-10 rounded-full object-cover">
+                                        <div>
+                                            <p class="font-medium text-white">Alex Johnson</p>
+                                            <p class="text-xs text-neutral-500">alex.j@example.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-6">
+                                    <span
+                                        class="bg-green-500/10 text-green-500 px-2 py-1 rounded-full text-xs font-bold border border-green-500/20">Active</span>
+                                </td>
+                                <td class="p-6">Platinum Tier</td>
+                                <td class="p-6">Mar 05, 2023</td>
+                                <td class="p-6 text-right">
+                                    <button class="text-neutral-500 hover:text-brand transition-colors"><iconify-icon
+                                            icon="solar:menu-dots-bold" width="20"></iconify-icon></button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="p-4 border-t border-white/5 flex justify-between items-center text-xs text-neutral-500">
+                    <span>Showing 1-10 of 124 users</span>
+                    <div class="flex gap-2">
+                        <button
+                            class="px-3 py-1 rounded-lg border border-white/10 hover:bg-white/5 disabled:opacity-50">Prev</button>
+                        <button
+                            class="px-3 py-1 rounded-lg border border-white/10 hover:bg-white/5 text-white">Next</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>
